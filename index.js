@@ -80,23 +80,3 @@ user.on('loggedOn', () => {
  	user4.setPersona(status4);               
  	user4.gamesPlayed(games4);
  });
-
-
- var username5 = process.env.username5;
- var password5 = process.env.password5;
- var shared_secret5 = process.env.shared5;
-
- var games5 = [730, 570, 440, 1222670, 578080, 1665460, 1049590, 1928420, 109600, 1172470,
-               714010, 291550, 766570, 236390, 230410, 933110, 397900, 386180, 702320,
-               238960, 1286830, 1677740, 2073850, 1085660, 335240, 304930, 1782210, 1997040,
-               1714320, 438100, 1599340, 8500];  // Enter here AppIDs of the needed games
- var status5 = 1;  // 1 - online, 7 - invisible
-
-
- user5 = new steamUser();
- user5.logOn({"accountName": username5, "password": password5, "twoFactorCode": steamTotp.generateAuthCode(shared_secret5)});
- user5.on('loggedOn', () => {
- 	if (user5.steamID != null) console.log(user5.steamID + ' - Successfully logged on');
- 	user5.setPersona(status5);               
- 	user5.gamesPlayed(games5);
- });
